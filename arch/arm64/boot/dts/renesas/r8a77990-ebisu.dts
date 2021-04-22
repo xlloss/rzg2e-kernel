@@ -376,8 +376,8 @@
 
 			csi40_in: endpoint {
 				clock-lanes = <0>;
-				data-lanes = <1 2>;
-				remote-endpoint = <&adv7482_txa>;
+				data-lanes = <1>;
+				remote-endpoint = <&adv7482_txa_sd>;
 			};
 		};
 	};
@@ -474,9 +474,10 @@
 		port@a {
 			reg = <10>;
 
-			adv7482_txa: endpoint {
+			adv7482_txa_sd: endpoint {
+				txa_direction = "afe";
 				clock-lanes = <0>;
-				data-lanes = <1 2>;
+				data-lanes = <1>;
 				remote-endpoint = <&csi40_in>;
 			};
 		};
